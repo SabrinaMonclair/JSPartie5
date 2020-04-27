@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
@@ -15,20 +16,23 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-    <title>Exercice1</title>
+    <title>Exercice2</title>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md">
-                <h1 class="text-center">Exercice 1</h1>
-                <p class="text-center">Créer un formulaire demandant un mot de passe et une confirmation de mot de passe
-                    et comportant un bouton.
+            <div class="col-md text-center">
+                <h1>Exercice2</h1>
+                <p> Créer un formulaire demandant un mot de passe et une confirmation de mot de passe et comportant un
+                    bouton.
                     Au clic sur le bouton, si les deux champs sont identiques, les entourer de vert. Sinon les entourer
-                    en rouge.
+                    en rouge.</p>
+
+                <p>Refaire l'exercice mais en utilisant des classes préparées en css.
                 </p>
-                <form name="myForm" class="text-center">
+
+                <form action="" name="myForm" class="text-center p-5">
                     <label for="password"> Saissisez un mot de passe:</label>
                     <input type="password" name="password" id="password" /><br />
 
@@ -42,20 +46,24 @@
     <script>
         function validateForm() {
 
-            let idPassword = document.getElementById('password');
-            let idPassword2 = document.getElementById('password2');
+            let idPassword = document.getElementById("password");
+            let idPassword2 = document.getElementById("password2");
 
             if (idPassword.value == idPassword2.value) {
 
-                idPassword.style.border = '2px solid green';
-                idPassword2.style.border = '2px solid green';
+                idPassword.classList.remove("InValide");
+                idPassword2.classList.remove("InValide");
+                idPassword.classList.add("Valide");
+                idPassword2.classList.add("Valide");
             } else {
-                
-                idPassword.style.border = '2px solid red';
-                idPassword2.style.border = '2px solid red';
-                 
-            }
+                idPassword.classList.remove("Valide");
+                idPassword2.classList.remove("Valide");
+                idPassword.classList.add("InValide");
+                idPassword2.classList.add("InValide");
 
+                alert("Mot de Passe Invalide");
+
+            }
         }
     </script>
 </body>
