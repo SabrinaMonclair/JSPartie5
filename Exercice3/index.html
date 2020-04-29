@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <title>Exercice3</title>
+</head>
+
+<body>
+    <h1>Exercice 3</h1>
+    <p>Créer un formulaire contenant
+        un champ nom, un champ mail et un champ age.
+        Si les champs ne correspondent pas à une regex, afficher un message d'erreur en rouge sous le
+        champs
+        dès que l'on entre une valeur.
+    </p>
+    <form action="" class="col-8 m-auto p-5">
+        <div class="form-group">
+            <label for="name">Nom</label>
+            <input type="text" class="form-control" id="name" name="name" onkeyup="fillname()">
+            <span class="error" id="errorName"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="text" class="form-control" id="age" name="age" onkeyup="fillage()">
+            <span class="error" id="errorage"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="mail">Adresse Mail</label>
+            <input type="text" class="form-control" id="mail" name="mail" onkeyup="fillemail()">
+            <span class="error" id="errormail"></span>
+        </div>
+    </form>
+
+
+    <script>
+        function fillname() {
+
+            let name = document.getElementById("name");
+            let errorName = document.getElementById("errorname");
+            let regexname = /^[a-zA-Z]+$/ ;
+
+            if (name_regex.test(name.value)) {
+                name.style.border = "2px solid green";
+                errorName.textContent = "";
+
+            } else {
+                name.style.borderColor = "red";
+                errorName.textContent= "Caractère non Valide";
+            }
+        }
+
+        function fillage(); {
+
+            let age = document.getElementById("age");
+            let regexage = /^[0-9]{1,3}$/ ;
+
+            if (regexage.test(age.value)) {
+                age.style.border = "2px solid green";
+                errorName.textContent = "";
+
+            } else {
+                age.style.borderColor = "red";
+                document.getElementById("errorage").textcontent = "Caractère non Valide";
+            }
+        }
+
+        function fillmail(); {
+            let mail = document.getElementById("mail");
+            let regexmail = /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/;
+
+            if (regexmail.test(mail.value)) {
+                mail.style.border = "2px solid green";
+                errorName.textContent = "";
+
+            } else {
+                mail.style.border = "red";
+                document.getElementById("errorname").textcontent = "Caractère non Valide";
+            }
+        }
+    </script>
+</body>
+
+</html
