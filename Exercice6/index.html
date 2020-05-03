@@ -35,38 +35,35 @@
     </div>
 
     <script>
-    
-            let nameBorderColor = document.getElementById("name");
-            let nameBorderColor = document.getElementById("age");
-            let nameBorderColor = document.getElementById("mail");
+        let idNameBorderColor = document.getElementById("name");
+        let idAgeBorderColor = document.getElementById("age");
+        let idMailBorderColor = document.getElementById("mail");
 
-            nameBorderColor.addEventListener("focus", changeNameBorderColor);
-            nameBorderColor.addEventListener("focusout", returnBorderColor);
-            ageBorderColor.addEventListener("focus", changeAgeBorderColor);
-            ageBorderColor.addEventListener("focusout", returnBorderColor);
-            MailBorderColor.addEventListener("focus", changeNameBorderColor);
-            MailBorderColor.addEventListener("focusout", returnBorderColor);
-
+        idNameBorderColor.addEventListener("focus", changeNameBorderColor);
+        idNameBorderColor.addEventListener("focusout", returnBorderColor);
+        idAgeBorderColor.addEventListener("focus", changeAgeBorderColor);
+        idAgeBorderColor.addEventListener("focusout", returnBorderColor);
+        idMailBorderColor.addEventListener("focus", changeNameBorderColor);
+        idMailBorderColor.addEventListener("focusout", returnBorderColor);
 
 
-            function changeNameBorderColor() {
-                nameBorderColor.style.border = "2px solid black";
-            }
+        function changeNameBorderColor() {
+            idNameBorderColor.style.border = "2px solid black";
+        }
 
-            function changeNameBorderColor() {
-                ageBorderColor.style.border = "2px solid black";
-            }
+        function changeNameBorderColor() {
+            idAgeBorderColor.style.border = "2px solid black";
+        }
 
-            function changeNameBorderColor() {
-                mailBorderColor.style.border = "2px solid black";
-            }
+        function changeNameBorderColor() {
+            idMailBorderColor.style.border = "2px solid black";
+        }
 
-            function returnBorderColor() {
-                name.borderColor.style.border = "";
-                age.borderColor.style.border = "";
-                mail.borderColor.style.border = "";
-            }
-        
+        function returnBorderColor() {
+            idName.borderColor.style.border = '';
+            idAge.borderColor.style.border = '';
+            idMail.borderColor.style.border = '';
+        }
     </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">

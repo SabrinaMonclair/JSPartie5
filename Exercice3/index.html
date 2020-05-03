@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -16,33 +15,36 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
+
     <title>Exercice3</title>
 </head>
 
 <body>
+    <div class="text-center">
     <h1>Exercice 3</h1>
     <p>Créer un formulaire contenant
         un champ nom, un champ mail et un champ age.
         Si les champs ne correspondent pas à une regex, afficher un message d'erreur en rouge sous le
         champs
         dès que l'on entre une valeur.
+        </div>
     </p>
     <form action="" class="col-8 m-auto p-5">
         <div class="form-group">
             <label for="name">Nom</label>
-            <input type="text" class="form-control" id="name" name="name" onkeyup="fillname()">
-            <span class="error" id="errorName"></span>
+            <input type="text" class="form-control" id="name" name="name" onkeyup="Validname()">
+            <span class="error" id="errorname"></span>
         </div>
 
         <div class="form-group">
             <label for="age">Age</label>
-            <input type="text" class="form-control" id="age" name="age" onkeyup="fillage()">
+            <input type="text" class="form-control" id="age" name="age" onkeyup="Validage()">
             <span class="error" id="errorage"></span>
         </div>
 
         <div class="form-group">
             <label for="mail">Adresse Mail</label>
-            <input type="text" class="form-control" id="mail" name="mail" onkeyup="fillemail()">
+            <input type="email" class="form-control" id="mail" name="mail" onkeyup="Validemail()">
             <span class="error" id="errormail"></span>
         </div>
     </form>
@@ -65,7 +67,7 @@
             }
         }
 
-        function fillage(); {
+        function fillage() {
 
             let age = document.getElementById("age");
             let regexage = /^[0-9]{1,3}$/ ;
@@ -80,7 +82,7 @@
             }
         }
 
-        function fillmail(); {
+        function fillmail() {
             let mail = document.getElementById("mail");
             let regexmail = /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/;
 
